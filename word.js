@@ -14,11 +14,10 @@ var con=msql.createConnection({
     database:"entries",
    // options:{trustServerCertificate: true}
 });
-//var sql = `SELECT word, definition FROM entries.entries where word= '${word}'`;
+//var sql = `SELECT word, definition FROM entries.entries where word '${word}'`;
+let word = req.query.term.trim();
 
-var sql = `SELECT * FROM entries`;
-// where word = '" +  req.query.term.trim() + "'`;
-//var sql =`SELECT * FROM entries.entries where word = '" + req.body.term.trim()+"'`;
+var sql ="SELECT * FROM entries.entries where word = '" + word +"'";
 
 con.query(sql,function(err,data,fields){
     if(err){ console.log(err);
