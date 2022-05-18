@@ -2,7 +2,7 @@
  * Dictionary.js
  */
 var express= require('express');
-//var cors=require('cors')
+var cors=require('cors')
 const path = require('path');
 var app=express();
 const bodyParser = require('body-parser');
@@ -10,12 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 var port=8088;
 app.use(express.static(__dirname));
-//app.use(cors())
+app.use(cors())
 
-// // app.use((req,res,next)=>{
-   
-// //     next();
-// });
 console.log(`server starting in port: ${port}`);
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './dict.html'));    
