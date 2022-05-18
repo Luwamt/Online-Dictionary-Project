@@ -33,7 +33,8 @@ console.log('Listenning the port on:'+port)
  const queryWord =function(req,res){
 
     let result = req.query.term;
-    const mysql=require('mysql');
+    //const mysql=require('mysql');
+ const   mysql = require('mysql2');
 
     // Connection to DB Connected!
     const con=mysql.createConnection({

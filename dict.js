@@ -17,7 +17,7 @@ function lookupWord() {
     type: "get",
     data: { term: $("#term").val() },
     dataType: "json",
-    success: showdResult,
+    success: showResult,
     error: failedToShow,
   });
 }
