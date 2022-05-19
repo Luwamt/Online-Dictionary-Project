@@ -17,13 +17,7 @@ label{
     font-weight: bold;
     font-size: 18px;
 }
-/* #btn{
-    background-color: rgb(31, 4, 119);
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 5px;
-} */
+
 #ctn{
     /* display: flex; */
     justify-content: center;

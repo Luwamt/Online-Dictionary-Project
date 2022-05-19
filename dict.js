@@ -3,7 +3,7 @@
  */
 "use strict";
 $(document).ready(function () {
-  $("#onLookup").click(lookupWord);
+  $("#lookup").click(lookupWord);
   $(document).keydown(function (event) {
     if(event.keyCode == 13){
       lookupWord();

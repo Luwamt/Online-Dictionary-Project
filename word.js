@@ -1,42 +1,37 @@
 
+ /* word.js
+* connection to database
+*/
 
-//  exports.queryWord =function(word,res){
+exports.queryWord =function(req,res){
 
-//     let result = req.query.term.trim();
-//     const msql=require('mysql');
+   let result = req.query.term;
+   //const mysql=require('mysql');
+const   mysql = require('mysql');
 
-//     // Connection to DB Connected!")
-//     const con=msql.createConnection({
-//         host:"localhost",
-//         port:3306,
-//         user:"root",
-//         password:"rootsq",
-//         database:"entries",
-    
-//     });
-//     con.connect();
-//     //var sql = `SELECT word, definition FROM entries.entries where word '${word}'`;
-
-//     var sql ="SELECT * FROM entries.entries where word = '" + sentence +"'";
-//     con.query(sql,function(err,data,fields){
-//         if(err){ throw err;
-//         }else{
-//             console.log(`Database Connected`)  
-//         //res.json(data);
-//         res.json(Object.values(JSON.parse(JSON.stringify(data))));
-//     }
-       
-//         }   
-//     );
-//     con.end(req,res);
-// }
-
-// con.connect(function (err){
-//     if(err){ 
-//         throw err;
-//     console.log("Error in the connection")
-
+   // Connection to DB Connected!
+   const con=mysql.createConnection({
+       host:"127.0.0.1",
+       port:3306,
+      user:"root1",
+      password:"password",
+       database:"entries",
    
-     //var sql = `SELECT wordtype, definition FROM entries.entries where word= '${word}'`;
+   });
+   con.connect();
 
- //}
+
+    var sql ="SELECT * FROM entries.entries where word = '" + result +"'";
+   con.query(sql,function(err,data,fields){
+       if(err){ console.log(err);
+       }else{
+           console.log(`Database Connected`)  
+       //res.json(data);
+       res.json(Object.values(JSON.parse(JSON.stringify(data))));
+   }
+       }   
+   );
+   con.end(req,res);
+}
+
+
